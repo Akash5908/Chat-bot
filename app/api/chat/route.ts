@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       reply: completion.choices[0].message.content,
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error(err);
     return NextResponse.json(
       { error: "Something went wrong" },

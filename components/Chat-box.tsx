@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "./ui/button";
 import axios from "axios";
-import { ArrowBigRight, Send } from "lucide-react";
+import { Send } from "lucide-react";
 
 const ChatBox = () => {
   const [message, setMessage] = useState<{ role: string; content: string }[]>(
