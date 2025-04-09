@@ -36,25 +36,24 @@ const ChatBox = () => {
           />
         </div>
         ``
-        <div className="text-white  flex flex-col space-y-1 border-2 p-[5px] h-full rounded-sm  overflow-x-scroll">
-          {" "}
+        <div className="text-white flex flex-col space-y-2 border-2 p-2 h-full rounded-sm overflow-y-scroll">
           {message.map((chat, idx) => (
-            <p
+            <div
               key={idx}
-              className={`my-2 w-full ${
-                chat.role === "assistant" ? "text-right  " : "text-left"
+              className={`w-full flex ${
+                chat.role === "assistant" ? "justify-end" : "justify-start"
               }`}
             >
-              <strong
-                className={
+              <div
+                className={`p-2 rounded-md max-w-[80%] ${
                   chat.role === "assistant"
-                    ? "text-green-200  p-2 rounded-sm  w-[10vw] "
-                    : "text-white  p-2 rounded-sm "
-                }
+                    ? "bg-green-700 text-white"
+                    : "bg-gray-800"
+                }`}
               >
                 {chat.content}
-              </strong>
-            </p>
+              </div>
+            </div>
           ))}
         </div>
         {/* Button */}
