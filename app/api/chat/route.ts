@@ -1,12 +1,10 @@
 // pages/api/chat.ts
-import type { NextApiRequest, NextApiResponse } from "next";
 import openai from "@/lib/openai";
+import { NextRequest, NextResponse } from "next/server";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const { message } = req.body;
+export async function POST(req: NextRequest) {
+  const body = await req.json();
+  const message = body.message;
 
   try {
     const completion = await openai.chat.completions.create({
@@ -14,9 +12,14 @@ export default async function handler(
       messages: [{ role: "user", content: message }],
     });
 
-    res.status(200).json({ reply: completion.choices[0].message.content });
-  } catch (error: unknown) {
-    console.error("OpenAI error:", error);
-    res.status(500).json({ error: "Something went wrong" });
+    return NextResponse.json({
+      reply: completion.choices[0].message.content,
+    });
+  } catch (err: any) {
+    console.error(err);
+    return NextResponse.json(
+      { error: "Something went wrong" },
+      { status: 500 }
+    );
   }
 }
