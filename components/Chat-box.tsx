@@ -33,8 +33,13 @@ const ChatBox = () => {
         <VantaGlobeBackground />
         <div className="space-y-2 w-[90vw] sm:w-[40vw] h-[70vh] max-sm:h-[80vh] md:h-[80vh] lg:h-[80vh] bg-black/60 border border-white/20 backdrop-blur-md p-4 rounded-lg">
           {/* ✅ Brand Name */}
-          <h1 className="text-center text-2xl sm:text-3xl font-bold text-purple-300 tracking-wider animate-pulse">
-            🤖 ChatBot
+          <h1 className="text-center text-2xl sm:text-3xl font-bold text-purple-300 tracking-wider animate-pulse flex items-center justify-center gap-2">
+            <img
+              src="/chatbot.png"
+              alt="ChatBot Icon"
+              className="w-[2.5vw] animate-icon"
+            />
+            ChatBot
           </h1>
           {/* Chat messages */}
           <div className="text-white flex flex-col space-y-2 border border-white/10 p-2 h-[75%] rounded-sm overflow-y-auto scroll-smooth scrollbar-thin scrollbar-thumb-violet-500 scrollbar-track-gray-700">
