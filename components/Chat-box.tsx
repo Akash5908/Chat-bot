@@ -25,13 +25,13 @@ const ChatBox = () => {
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-black">
       {/* Glowy animated background layer */}
-      <div className="absolute top-0 left-0 w-full h-[60vh] z-0 animate-pulse bg-gradient-to-br from-purple-500/30 via-blue-300/20 to-pink-600/20 blur-2xl" />
+      <div className="absolute top-0 left-0 w-full h-[60vh]  z-0 animate-pulse bg-gradient-to-br from-purple-500/30 via-blue-300/20 to-pink-600/20 blur-2xl" />
       {/* <VantaNetBackground /> */}
       {/* Chat content */}
       <div className="relative z-10 flex justify-center items-center w-full h-full">
         {/* <VantaBackground /> */}
         <VantaGlobeBackground />
-        <div className="space-y-2 w-[90vw] sm:w-[40vw] h-[70vh] bg-black/60 border border-white/20 backdrop-blur-md p-4 rounded-lg">
+        <div className="space-y-2 w-[90vw] sm:w-[40vw] h-[70vh] max-sm:h-[80vh] md:h-[80vh] lg:h-[80vh] bg-black/60 border border-white/20 backdrop-blur-md p-4 rounded-lg">
           {/* ✅ Brand Name */}
           <h1 className="text-center text-2xl sm:text-3xl font-bold text-purple-300 tracking-wider animate-pulse">
             🤖 ChatBot
